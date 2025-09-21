@@ -11,6 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 load_dotenv()
 NEWSDATA_KEY = os.getenv("NEWSDATA_API_KEY")
 OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
 # MCP server and FastAPI app
 mcp = FastMCP("WeatherNewsMCP")
@@ -18,7 +19,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # Add your frontend URL
+    allow_origins=["http://localhost:5173", "http://localhost:3000", FRONTEND_URL], 
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
