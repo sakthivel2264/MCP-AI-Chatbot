@@ -1,0 +1,14 @@
+[project]
+name = "weather-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.117.1",
+    "google-generativeai>=0.8.5",
+    "httpx>=0.28.1",
+    "mcp[cli,server]>=1.14.1",
+    "python-dotenv>=1.1.1",
+    "uvicorn>=0.36.0",
+]
